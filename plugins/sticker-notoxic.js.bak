@@ -1,0 +1,21 @@
+import { sticker } from '../lib/sticker.js'
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+
+let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global.packname, global.author)
+    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+    throw stiker.toString()
+    
+}
+
+handler.customPrefix = /^(alie?n|hum?u|bile?k|ban?h|cum?|knt?l|y?|mmk|p|b(a|i)?c?(o|i)?(t|d)?|wibu|p(a)?nt(e)?k|pepe?k|anj?ng|jing|asu|bgst|bangsat|jink)$/i
+handler.command = new RegExp
+
+export default handler
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
+let stikerhuuu = [
+ https://telegra.ph/file/32f91cf8b6b4a13ec808d.png",
+]
